@@ -15,10 +15,16 @@
 
 / {
     behaviors {
-        default_layer_set: default_layer_set {
-            compatible = "zmk,behavior-to-layer";
+        cole_on: cole_on {
+            compatible = "zmk,behavior-layer-toggle";
             #binding-cells = <1>;
-            locking;
+            toggle-mode = "on";
+        };
+
+        cole_off: cole_off {
+            compatible = "zmk,behavior-layer-toggle";
+            #binding-cells = <1>;
+            toggle-mode = "off";
         };
     };
 
@@ -115,7 +121,7 @@
 
             bindings = <
 &trans           &trans           &trans          &trans           &trans           &trans             &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &default_layer_set 6   &default_layer_set 0
+&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &cole_on 6   &cole_off 6
 &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans    &trans    &trans    &trans     &trans  &trans
                                                   &rgb_ug RGB_SPI  &trans           &kp SPACE          &kp RET   &trans    &kp RALT
             >;
