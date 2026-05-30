@@ -66,7 +66,16 @@
 &kp TAB       &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y           &kp U  &kp I                   &kp O             &kp P               &kp BSPC
 &kp ESCAPE    &kp A  &kp S  &kp D  &kp F  &kp G        &kp H           &kp J  &kp K                   &kp L             &kp SEMI            &kp ENTER
 &kp LEFT_GUI  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N           &kp M  &mt LEFT_CONTROL COMMA  &mt LEFT_ALT DOT  &mt LEFT_GUI SLASH  &kp DELETE
-                            &mo 4  &mo 1  &kp SPACE    &kp LEFT_SHIFT  &mo 2  &mo 5
+                            &mo 5  &mo 2  &kp SPACE    &kp LEFT_SHIFT  &mo 3  &mo 6
+            >;
+        };
+
+        cole {
+            bindings = <
+&kp TAB       &kp Q  &kp W  &kp F  &kp P  &kp B        &kp J           &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
+&kp ESC       &kp A  &kp R  &kp S  &kp T  &kp G        &kp M           &kp N  &kp E      &kp I    &kp O     &kp RET
+&kp LG(LGUI)  &kp X  &kp C  &kp D  &kp V  &kp Z        &kp K           &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp DEL
+                            &mo 5  &mo 2  &kp SPACE    &kp LEFT_SHIFT  &mo 3  &mo 6
             >;
         };
 
@@ -81,7 +90,7 @@
 &kp TAB    &trans        &trans        &kp TAB           &kp K_BACK      &kp K_FORWARD    &trans         &trans          &trans            &trans        &trans        &kp BSPC
 &kp LCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4    &kp N5           &kp NUMBER_6   &kp N7          &kp N8            &kp N9        &kp N0        &trans
 &trans     &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans           &kp DOT        &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
-                                       &kp LGUI          &trans          &kp SPACE        &kp BACKSPACE  &mo 3           &kp RIGHT_GUI
+                                       &kp LGUI          &trans          &kp SPACE        &kp BACKSPACE  &mo 4           &kp RIGHT_GUI
             >;
         };
 
@@ -90,7 +99,7 @@
 &trans  &kp EXCL       &kp AT            &kp POUND     &kp DOLLAR  &kp PERCENT          &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET      &trans
 &trans  &kp LESS_THAN  &kp GREATER_THAN  &kp QUESTION  &kp APOS    &kp DOUBLE_QUOTES    &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &trans
 &trans  &kp GRAVE      &kp TILDE         &kp LS(P)     &kp P       &trans               &kp UNDER  &kp PLUS   &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &kp PIPE       &trans
-                                         &kp LEFT_GUI  &mo 3       &kp ENTER            &mo 3      &trans     &trans
+                                         &kp LEFT_GUI  &mo 4       &kp ENTER            &mo 4      &trans     &trans
             >;
         };
 
@@ -120,19 +129,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans           &trans           &trans          &trans           &trans           &trans             &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &cole_on 6   &cole_off 6
-&rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans    &trans    &trans    &trans     &trans  &trans
+&trans           &trans           &trans          &trans           &trans           &trans             &kp N6    &kp N7    &kp N8    &kp N9     &kp N0      &kp BSPC
+&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &cole_on 1  &cole_off 1
+&rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans    &trans    &trans    &trans     &trans      &trans
                                                   &rgb_ug RGB_SPI  &trans           &kp SPACE          &kp RET   &trans    &kp RALT
-            >;
-        };
-
-        cole {
-            bindings = <
-&kp TAB       &kp Q  &kp W  &kp F  &kp P  &kp B        &kp J           &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
-&kp ESC       &kp A  &kp R  &kp S  &kp T  &kp G        &kp M           &kp N  &kp E      &kp I    &kp O     &kp RET
-&kp LG(LGUI)  &kp X  &kp C  &kp D  &kp V  &kp Z        &kp K           &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp DEL
-                            &mo 4  &mo 1  &kp SPACE    &kp LEFT_SHIFT  &mo 2  &mo 5
             >;
         };
     };
