@@ -18,6 +18,7 @@
         default_layer_set: default_layer_set {
             compatible = "zmk,behavior-to-layer";
             #binding-cells = <1>;
+            locking;
         };
     };
 
