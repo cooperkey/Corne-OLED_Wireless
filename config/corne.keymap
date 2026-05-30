@@ -16,13 +16,13 @@
 / {
     behaviors {
         cole_on: cole_on {
-            compatible = "zmk,behavior-layer-toggle";
+            compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
             toggle-mode = "on";
         };
 
         cole_off: cole_off {
-            compatible = "zmk,behavior-layer-toggle";
+            compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
             toggle-mode = "off";
         };
