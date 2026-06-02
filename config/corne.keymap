@@ -50,6 +50,11 @@
             bindings = <&kp ESCAPE>;
             key-positions = <38 39>;
         };
+
+        terminalDel {
+            bindings = <&kp LC(W)>;
+            key-positions = <14 15 16>;
+        };
     };
 
     keymap {
@@ -68,6 +73,8 @@
 &kp LEFT_GUI  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N           &kp M  &mt LEFT_CONTROL COMMA  &mt LEFT_ALT DOT  &mt LEFT_GUI SLASH  &kp DELETE
                             &mo 5  &mo 2  &kp SPACE    &kp LEFT_SHIFT  &mo 3  &mo 6
             >;
+
+            label = "main";
         };
 
         cole {
@@ -77,6 +84,8 @@
 &kp LG(LGUI)  &kp X  &kp C  &kp D  &kp V  &kp Z        &kp K           &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp DEL
                             &mo 5  &mo 2  &kp SPACE    &kp LEFT_SHIFT  &mo 3  &mo 6
             >;
+
+            label = "cole";
         };
 
         num {
@@ -92,6 +101,8 @@
 &trans     &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans           &kp DOT        &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
                                        &kp LGUI          &trans          &kp SPACE        &kp BACKSPACE  &mo 4           &kp RIGHT_GUI
             >;
+
+            label = "num";
         };
 
         sym {
@@ -101,6 +112,8 @@
 &trans  &kp GRAVE      &kp TILDE         &kp LS(P)     &kp P       &trans               &kp UNDER  &kp PLUS   &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &kp PIPE       &trans
                                          &kp LEFT_GUI  &mo 4       &kp ENTER            &mo 4      &trans     &trans
             >;
+
+            label = "sym";
         };
 
         nav {
@@ -110,6 +123,8 @@
 &trans  &trans        &kp LC(C)  &kp LS(LC(C))  &kp LS(LC(V))  &kp LC(V)    &kp H     &kp J     &kp K   &kp L      &trans           &trans
                                  &kp LGUI       &trans         &trans       &trans    &trans    &trans
             >;
+
+            label = "nav";
         };
 
         mouse {
@@ -119,6 +134,8 @@
 &trans  &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP     &trans      &trans          &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans
                                          &mkp MB3        &mkp MB2         &mkp MB1    &mkp MB1        &mkp MB2        &mkp MB3
             >;
+
+            label = "mouse";
         };
 
         conf {
@@ -134,6 +151,8 @@
 &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans    &trans    &trans    &trans     &trans      &trans
                                                   &rgb_ug RGB_SPI  &trans           &kp SPACE          &kp RET   &trans    &kp RALT
             >;
+
+            label = "conf";
         };
     };
 };
