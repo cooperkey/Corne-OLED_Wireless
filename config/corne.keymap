@@ -9,26 +9,12 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    behaviors {
-        cole_on: cole_on {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            toggle-mode = "on";
-        };
-
-        cole_off: cole_off {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            toggle-mode = "off";
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -52,14 +38,9 @@
             key-positions = <38 39>;
         };
 
-        terminalDel {
+        terminalDelete {
             bindings = <&kp LC(W)>;
             key-positions = <14 15 16>;
-        };
-
-        shift+enter {
-            bindings = <&kp LS(ENTER)>;
-            key-positions = <4 5>;
         };
     };
 
@@ -74,13 +55,13 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y           &kp U  &kp I      &kp O    &kp P      &kp BSPC
-&kp ESCAPE    &kp A  &kp S  &kp D  &kp F  &kp G        &kp H           &kp J  &kp K      &kp L    &kp SEMI   &kp ENTER
-&kp LEFT_GUI  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N           &kp M  &kp COMMA  &kp DOT  &kp SLASH  &kp DELETE
+&kp TAB       &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y           &kp U  &kp I      &kp O       &kp P      &kp BSPC
+&kp ESCAPE    &kp A  &kp S  &kp D  &kp F  &kp G        &kp H           &kp J  &kp K      &kp L       &kp SEMI   &kp ENTER
+&kp LEFT_GUI  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N           &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp DELETE
                             &mo 5  &mo 2  &kp SPACE    &kp LEFT_SHIFT  &mo 3  &mo 6
             >;
 
-            label = "main";
+            label = "main_0";
         };
 
         cole {
@@ -91,7 +72,7 @@
                             &mo 5  &mo 2  &kp SPACE    &kp LEFT_SHIFT  &mo 7  &mo 6
             >;
 
-            label = "cole";
+            label = "cole_01";
         };
 
         num {
@@ -102,13 +83,13 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &trans        &trans        &kp TAB           &kp K_BACK      &kp K_FORWARD    &kp C_VOL_UP   &kp C_VOLUME_DOWN  &trans            &trans        &trans        &kp BSPC
-&kp LCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4    &kp N5           &kp NUMBER_6   &kp N7             &kp N8            &kp N9        &kp N0        &trans
-&trans     &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans           &kp DOT        &kp LEFT_SHIFT     &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
-                                       &kp LGUI          &trans          &kp SPACE        &kp BACKSPACE  &mo 4              &kp RIGHT_GUI
+&kp TAB    &trans        &trans        &kp TAB           &kp K_BACK      &kp K_FORWARD    &kp K_VOLUME_UP  &kp K_VOLUME_DOWN  &trans            &trans        &trans        &kp BSPC
+&kp LCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4    &kp N5           &kp NUMBER_6     &kp N7             &kp N8            &kp N9        &kp N0        &trans
+&trans     &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp COMMA        &kp DOT          &kp LEFT_SHIFT     &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
+                                       &kp LGUI          &trans          &kp SPACE        &kp BACKSPACE    &mo 4              &kp RIGHT_GUI
             >;
 
-            label = "num";
+            label = "num_02";
         };
 
         sym {
@@ -119,7 +100,7 @@
                                          &kp LEFT_GUI  &mo 4       &kp ENTER            &mo 4      &trans     &mo 5
             >;
 
-            label = "sym";
+            label = "sym_03";
         };
 
         nav {
@@ -130,7 +111,7 @@
                                  &kp LGUI       &trans         &trans       &trans    &trans    &trans
             >;
 
-            label = "nav";
+            label = "nav_04";
         };
 
         mouse {
@@ -141,7 +122,7 @@
                                          &mkp MB3        &mkp MB2         &mkp MB1    &mkp MB1        &mkp MB2        &mkp MB3
             >;
 
-            label = "mouse";
+            label = "mouse_05";
         };
 
         conf {
@@ -152,23 +133,24 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans           &trans           &trans          &trans           &kp K_BACK       &kp K_FORWARD      &kp C_VOLUME_UP  &kp C_VOL_DN  &kp K_PLAY_PAUSE  &kp K_MUTE  &trans      &kp BSPC
-&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT         &kp DOWN      &kp UP            &kp RIGHT   &cole_on 1  &cole_off 1
-&rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans           &trans        &trans            &trans      &ext_power EP_OFF  &ext_power EP_ON
-                                                  &rgb_ug RGB_SPI  &trans           &kp SPACE          &kp RET          &trans        &kp RALT
+&trans           &trans           &trans          &trans           &kp K_BACK       &kp K_FORWARD      &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_PP  &kp K_MUTE         &trans            &kp BSPC
+&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT         &kp DOWN           &kp UP    &kp RIGHT          &to 1             &to 0
+&rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans           &trans             &trans    &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF
+                                                  &rgb_ug RGB_SPI  &trans           &kp SPACE          &kp RET          &trans             &kp RALT
             >;
 
-            label = "conf";
+            label = "conf_06";
         };
 
         sym_col {
-            label = "colsy";
             bindings = <
 &trans  &kp EXCL       &kp AT            &kp POUND     &kp DOLLAR  &kp PERCENT          &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET      &trans
 &trans  &kp LESS_THAN  &kp GREATER_THAN  &kp QUESTION  &kp APOS    &kp DOUBLE_QUOTES    &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &trans
 &trans  &kp GRAVE      &kp TILDE         &kp COLON     &kp SEMI    &trans               &kp UNDER  &kp PLUS   &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &kp PIPE       &trans
                                          &kp LEFT_GUI  &mo 4       &kp ENTER            &mo 4      &trans     &mo 5
             >;
+
+            label = "sym_col_07";
         };
     };
 };
