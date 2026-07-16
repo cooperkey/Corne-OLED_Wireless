@@ -25,17 +25,22 @@
 
         colonVim {
             bindings = <&kp LS(P)>;
-            key-positions = <16 17>;
+            key-positions = <28 29>;
         };
 
         ctrlSpaceTmux {
             bindings = <&kp LC(SPACE)>;
-            key-positions = <18 19>;
+            key-positions = <30 31>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <38 39>;
+        };
+
+        terminalDelete {
+            bindings = <&kp LC(W)>;
+            key-positions = <14 15 16>;
         };
     };
 
