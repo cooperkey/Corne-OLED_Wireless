@@ -1,5 +1,6 @@
 name: zmk-config
 build:
-  cmake-ext: True
-  kconfig-ext: True
-  boards-root: .
+  cmake-ext: true
+  kconfig-ext: true
+  settings:
+    board_root: .
