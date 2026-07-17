@@ -16,6 +16,14 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    macros {
+        ble0: ble0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE>, <&bt BT_SEL 0>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -135,7 +143,7 @@
 
             bindings = <
 &tog 1           &tog 0           &trans          &trans           &kp K_BACK       &kp K_FORWARD      &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_PP  &kp K_MUTE         &trans            &kp BSPC
-&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT         &kp DOWN           &kp UP    &kp RIGHT          &out OUT_USB      &out OUT_BLE
+&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT         &kp DOWN           &kp UP    &kp RIGHT          &out OUT_USB      &ble0
 &rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans           &trans             &trans    &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF
                                                   &rgb_ug RGB_SPI  &trans           &kp SPACE          &kp RET          &trans             &kp RALT
             >;
