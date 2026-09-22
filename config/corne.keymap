@@ -59,6 +59,11 @@
             bindings = <&kp LC(W)>;
             key-positions = <14 15 16>;
         };
+
+        mo4 {
+            bindings = <&mo 4>;
+            key-positions = <37 40>;
+        };
     };
 
     keymap {
@@ -103,7 +108,7 @@
 &kp TAB    &trans        &trans        &kp TAB           &kp K_BACK      &kp K_FORWARD    &kp K_VOLUME_UP  &kp K_VOLUME_DOWN  &trans            &trans        &trans        &kp BSPC
 &kp LCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4    &kp N5           &kp NUMBER_6     &kp N7             &kp N8            &kp N9        &kp N0        &trans
 &trans     &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp COMMA        &kp DOT          &kp LEFT_SHIFT     &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
-                                       &kp LGUI          &trans          &kp SPACE        &kp BACKSPACE    &mo 4              &kp RIGHT_GUI
+                                       &kp LGUI          &trans          &kp SPACE        &kp BACKSPACE    &trans             &kp RIGHT_GUI
             >;
 
             label = "010";
@@ -114,7 +119,7 @@
 &trans  &kp EXCL       &kp AT            &kp POUND     &kp DOLLAR  &kp PERCENT          &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET      &trans
 &trans  &kp LESS_THAN  &kp GREATER_THAN  &kp QUESTION  &kp APOS    &kp DOUBLE_QUOTES    &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH  &trans
 &trans  &kp GRAVE      &kp TILDE         &kp LS(P)     &kp P       &trans               &kp UNDER  &kp PLUS   &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &kp PIPE       &trans
-                                         &kp LEFT_GUI  &mo 4       &kp ENTER            &mo 4      &trans     &mo 5
+                                         &kp LEFT_GUI  &trans      &kp ENTER            &mo 4      &trans     &mo 5
             >;
 
             label = "011";
